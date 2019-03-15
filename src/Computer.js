@@ -5,21 +5,21 @@ import { AST_Let } from 'terser';
 class Computer extends React.Component {
   state = {showCompPick: false, compPick: "Let's Play", results: "", wins: 0, losses: 0,}
 
-  componentDidUpdate = (prevState, prevProps,) => {
-    if (this.prevState !== this.State)
-    this.setState({showCompPick: !this.state.showCompPick})
-  }
+
 
   compPaper = () => {
     if (this.props.playerChoice === "Rock") {
       this.setState({results: "You Lose"})
       this.setState({losses: this.state.losses + 1})
     }
-    else if (this.props.playerChoice === "Paper")
+    else if (this.props.playerChoice === "Paper"){
       this.setState({results: "You Tie"})
+  
+    }
     else if (this.props.playerChoice === "Scissors")
     this.setState({results: "You Win"})
     this.setState({wins: this.state.wins + 1})
+    
   }
 
   compRock = () => {
@@ -73,8 +73,7 @@ class Computer extends React.Component {
     let i = this.getRandomInt(3)
     let gameTime = compChoices[i]
     this.setState({compPick: gameTime})
-    this.setState({showcompPick: !this.state.showCompPick})
-    this.playGame()
+    this.setState({showcompPick: !this.state.showCompPick}, () => {this.playGame()})
   }
 
   
