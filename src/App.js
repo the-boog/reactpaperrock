@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Player from './Player';
 
 class App extends Component {
+
+  displayColor = () => {
+
+  }
+
   render() {
     return (
-      <div className="App">
+      <div>
         <Player />
         
       </div>

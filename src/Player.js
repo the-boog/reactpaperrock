@@ -5,7 +5,7 @@ import Paper from './paper.png';
 import Scissors from './scissors.png';
 
 class Player extends React.Component {
-  state = {showPlayerPick: false, playerPick: "Welcome"}
+  state = {showPlayerPick: false, playerPick: ""}
 
 playerChoiceRock = () => {
   this.setState({playerPick: "Rock"})
@@ -34,7 +34,7 @@ playerChoiceScissors = () => {
         <button onClick={() => this.playerChoiceScissors()}>
           <img src={Scissors} />
           </button>
-        <h1>{this.state.playerPick}</h1>
+        <h1>You picked {this.state.playerPick}</h1>
         <Computer playerChoice= {this.state.playerPick} />
       </div>
     )

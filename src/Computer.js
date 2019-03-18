@@ -1,11 +1,12 @@
 import React from 'react';
 import { AST_Let } from 'terser';
+import {Button} from 'semantic-ui-react';
 
 
 class Computer extends React.Component {
-  state = {showCompPick: false, compPick: "Let's Play", results: "", wins: 0, losses: 0,}
+  state = {showCompPick: false, compPick: "", results: "", wins: 0, losses: 0,}
 
-
+  
 
   compPaper = () => {
     if (this.props.playerChoice === "Rock") {
@@ -81,8 +82,8 @@ class Computer extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={() => this.computerChoice()}>Go</button>
-        <h1>{this.state.compPick}</h1>
+        <Button size="massive" color="red" onClick={() => this.computerChoice()}>Fight</Button>
+        <h1>The computer chose {this.state.compPick}</h1>
         <h1>{this.state.results}</h1>
         <h2>wins = {this.state.wins}</h2>
         <h2>losses = {this.state.losses}</h2>
